@@ -24,13 +24,18 @@
   .quote-text {
     font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 1rem;
+    margin-top: 10rem;
   }
   
   .quote-author {
     font-size: 1.5rem;
   }
-  
+  .name
+  {
+   margin-left:auto ;
+   margin-top: auto;
+ 
+  }
   .customization-options {
     display: flex;
     justify-content: center;

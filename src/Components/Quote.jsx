@@ -35,7 +35,7 @@ const QuoteGenerator = () => {
   const downloadQuote = async () => {
     if (quoteRef.current) {
       const canvas = await html2canvas(quoteRef.current, {
-        width: 800,
+        width: 730,
         height: 500,
         scale: 1,
       });
@@ -50,7 +50,7 @@ const QuoteGenerator = () => {
   const shareQuote = async () => {
     if (quoteRef.current) {
       const canvas = await html2canvas(quoteRef.current, {
-        width: 800,
+        width: 730,
         height: 500,
         scale: 1,
       });
@@ -99,6 +99,7 @@ const QuoteGenerator = () => {
       >
         <div className="quote-text">"{quote}"</div>
         <div className="quote-author">- {author}</div>
+        <div className='name' style={{color:"black"}}>-@post-Creator</div>
       </div>
       <div className="customization-options">
         <input 
