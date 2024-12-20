@@ -1,0 +1,116 @@
+.quote-generator {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .quote-container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+  }
+  
+  .quote-text {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .quote-author {
+    font-size: 1.5rem;
+  }
+  
+  .customization-options {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .customization-options input[type="color"] {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .customization-options select {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .customization-options button {
+    padding: 0.5rem 1rem;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .customization-options button:hover {
+    background-color: #357abd;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  
+  .generate-button,
+  .download-button,
+  .share-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .generate-button {
+    background-color: #4a90e2;
+  }
+  
+  .generate-button:hover {
+    background-color: #357abd;
+  }
+  
+  .download-button {
+    background-color: #50c878;
+  }
+  
+  .download-button:hover {
+    background-color: #3da65a;
+  }
+  
+  .share-button {
+    background-color: #9b59b6;
+  }
+  
+  .share-button:hover {
+    background-color: #8e44ad;
+  }
+  
+  .generate-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }

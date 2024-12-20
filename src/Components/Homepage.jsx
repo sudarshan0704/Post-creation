@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from './Navigation';
+import Footer from './Footer';
+import meme from '../images/meme.jpg';
+import quote from '../images/quotes.jpg';
+import comics from '../images/comics.jpg';
+import img2 from '../images/image2.jpg';
 import '../Stylefile/Homestyle.css';
 
 export default function Homepage() {
@@ -15,9 +20,9 @@ export default function Homepage() {
         // Replace this with an actual API call in the future
         const response = await new Promise(resolve => 
           setTimeout(() => resolve([
-            { id: 1, title: 'AI-Generated Landscape', image: 'https://source.unsplash.com/random/800x600?landscape' },
-            { id: 2, title: 'Futuristic City', image: 'https://source.unsplash.com/random/800x600?futuristic' },
-            { id: 3, title: 'Abstract Art', image: 'https://source.unsplash.com/random/800x600?abstract' }
+            { id: 1, title: 'Random Memes', image:meme },
+            { id: 2, title: 'Motivatinal Quotes', image: quote },
+            { id: 3, title: 'Comics', image: comics }
           ]), 1000)
         );
         setRecentPosts(response);
@@ -47,7 +52,7 @@ export default function Homepage() {
             <Link to="/generate" className="cta-button">Start Creating</Link>
           </div>
           <div className="hero-image">
-            <img src="https://source.unsplash.com/random/1200x800?ai" alt="AI-generated art" className="floating" />
+            <img src={img2} alt="AI-generated art" className="floating" />
           </div>
         </section>
 
@@ -89,9 +94,7 @@ export default function Homepage() {
         </section>
       </main>
 
-      <footer className="homepage-footer">
-        <p>&copy; 2023 PostCreator AI. Empowering creativity through artificial intelligence.</p>
-      </footer>
+    <Footer/>
     </div>
   );
 }
