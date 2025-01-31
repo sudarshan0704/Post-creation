@@ -35,9 +35,9 @@ const QuoteGenerator = () => {
   const downloadQuote = async () => {
     if (quoteRef.current) {
       const canvas = await html2canvas(quoteRef.current, {
-        width: 730,
-        height: 500,
-        scale: 1,
+        width: quoteRef.current.offsetWidth,
+        height: quoteRef.current.offsetHeight,
+        scale: 2,
       });
       const image = canvas.toDataURL('image/png');
       const link = document.createElement('a');
@@ -50,9 +50,9 @@ const QuoteGenerator = () => {
   const shareQuote = async () => {
     if (quoteRef.current) {
       const canvas = await html2canvas(quoteRef.current, {
-        width: 730,
-        height: 500,
-        scale: 1,
+        width: quoteRef.current.offsetWidth,
+        height: quoteRef.current.offsetHeight,
+        scale: 2,
       });
       canvas.toBlob(async (blob) => {
         const file = new File([blob], 'quote.png', { type: 'image/png' });
@@ -81,6 +81,10 @@ const QuoteGenerator = () => {
       reader.onload = (e) => setBackgroundImage(e.target.result);
       reader.readAsDataURL(file);
     }
+  };
+
+  const removeBackgroundImage = () => {
+    setBackgroundImage('');
   };
 
   return (
@@ -135,6 +139,11 @@ const QuoteGenerator = () => {
         <button onClick={() => fileInputRef.current.click()}>
           Upload Background Image
         </button>
+        {backgroundImage && (
+          <button onClick={removeBackgroundImage}>
+            Remove Background Image
+          </button>
+        )}
       </div>
       <div className="button-container">
         <button

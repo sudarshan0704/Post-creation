@@ -221,7 +221,10 @@ body {
   .hero {
     flex-direction: column;
   }
-
+.glowing-text
+{
+  font-family: 20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
   .hero-content, .hero-image {
     padding: 20px;
   }
