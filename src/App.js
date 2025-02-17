@@ -5,17 +5,34 @@ import Homepage from './Components/Homepage';
 import QuoteGenerator from './Components/Quote';
 import Memes from './Components/Memes';
 import Postcreate from './Components/Postcreate';
+
+
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
+    <div className="App"> 
+     
+  
+{/* 
+<div style={{ height: '500px', position: 'relative', overflow: 'hidden'}}>
+  <Ribbons
+    baseThickness={30}
+    colors={['#ffffff']}
+    speedMultiplier={0.5}
+    maxAge={500}
+    enableFade={false}
+    enableShaderEffect={true}
+  />
+  </div> */}
+     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/generate" element={<Postcreate />} />
 
         </Routes>     
          </BrowserRouter>
+  
     </div>
+    
   );
 }
 

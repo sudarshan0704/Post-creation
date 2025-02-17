@@ -1,65 +1,201 @@
-.quote-generator {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.quotes-container {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
-  max-width: 100%;
-  box-sizing: border-box;
-  background-color: #f9f9f9;
- 
+  color: #ffffff;
 }
 
-.quote-container {
-  width: 100%;
-  max-width: 730px;
-  height: auto;
-  aspect-ratio: 3 / 2;
+.page-title {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.content-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+  gap: 30px;
+}
+
+.quote-generator {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quote-generator:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.quote-generator h2 {
+  color: #ffffff;
   margin-bottom: 20px;
+  font-size: 1.8rem;
+  border-bottom: 2px solid #3700B3;
+  padding-bottom: 10px;
+}
+
+.quote-display {
+  background-color: #2c2c2c;
+  border-radius: 12px;
+  padding: 25px;
+  margin: 25px 0;
+  
+  max-width: 800px;
+  min-height: 500px;
+ 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  box-sizing: border-box;
-  border: 1px solid #000000; 
-  border-radius: 20px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.quote-display:hover {
+  transform: scale(1.02);
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .quote-text {
   font-size: 24px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  color: inherit;
 }
 
 .quote-author {
   font-size: 18px;
   font-style: italic;
+  margin-bottom: 10px;
+  color: inherit;
+}
+
+.name {
+  font-size: 14px;
+  opacity: 0.8;
+  color: inherit;
+}
+
+.customization-panel {
+  background-color: #2c2c2c;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.customization-panel h3 {
+  color: #ffffff;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
 }
 
 .customization-options {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 10px;
-  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.customization-options input[type="color"] {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.customization-options select {
+  background-color: #3700B3;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.customization-options button {
+  background-color: #3700B3;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.customization-options button:hover {
+  background-color: #5900ff;
 }
 
 .button-container {
   display: flex;
-  flex-wrap: wrap;
+  gap: 15px;
   justify-content: center;
-  gap: 10px;
+  margin-top: 20px;
 }
 
-button {
-  padding: 10px 20px;
-  font-size: 16px;
+.generate-btn, .action-btn {
+  background-color: #3700B3;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
   cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.generate-btn:hover, .action-btn:hover {
+  background-color: #5900ff;
+  transform: scale(1.05);
+}
+
+.generate-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.remove-bg-btn {
+  background-color: #dc3545 !important;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.remove-bg-btn:hover {
+  background-color: #c82333 !important;
 }
 
 @media (max-width: 768px) {
-  .quote-container {
-    aspect-ratio: 1 / 1;
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  .button-container {
+    flex-direction: column;
+  }
+
+  .generate-btn, .action-btn {
+    width: 100%;
+  }
+
+  .customization-options {
+    flex-direction: column;
+    align-items: center;
   }
 
   .quote-text {
@@ -68,29 +204,5 @@ button {
 
   .quote-author {
     font-size: 16px;
-  }
-
-  button {
-    padding: 8px 16px;
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .quote-text {
-    font-size: 18px;
-  }
-
-  .quote-author {
-    font-size: 14px;
-  }
-
-  .customization-options {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  button {
-    width: 100%;
   }
 }

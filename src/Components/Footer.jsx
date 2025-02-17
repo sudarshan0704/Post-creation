@@ -51,12 +51,12 @@ function Footer() {
         </div>
 
         <div className="footer-section">
-          <h4>Newsletter Subscription</h4>
+          <h4>Post-Creator</h4>
           {/* Add newsletter subscription */}
-          <form>
+          {/* <form>
             <input type="email" placeholder="Subscribe to our newsletter" />
             <button type="submit">Subscribe</button>
-          </form>
+          </form> */}
         </div>
       </div>
     </footer>
