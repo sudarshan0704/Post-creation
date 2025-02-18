@@ -113,7 +113,7 @@ export default function Jokes() {
             </motion.div>
           </AnimatePresence>
           <div className="joke-actions">
-            <input type="file" accept="image/*" onChange={handleBackgroundChange} className="bg-input" />
+            <input type="file" accept="image/*" onChange={handleBackgroundChange} className="bg-input"  />
             <motion.button 
               onClick={downloadJoke} 
               className="action-btn"

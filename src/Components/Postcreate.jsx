@@ -4,6 +4,7 @@ import Footer from './Footer';
 import Memes from './Memes';
 import QuoteGenerator from './Quote';
 import Jokes from './Jokes';
+import Facts from './Facts';
 
 
 // In your renderComponent function:
@@ -26,6 +27,8 @@ export default function Postcreate() {
         return <Jokes />;
       case 'story':
         return <Story />;
+      case 'facts':
+        return <Facts />;
     
       default:
         return <Memes />;
@@ -82,6 +85,17 @@ export default function Postcreate() {
                   onClick={() => setActiveComponent('story')}
                 >
                   Story
+                </button>
+              </motion.li>
+              <motion.li
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <button
+                  className={activeComponent === 'facts' ? 'active' : ''}
+                  onClick={() => setActiveComponent('facts')}
+                >
+                  Facts
                 </button>
               </motion.li>
             
