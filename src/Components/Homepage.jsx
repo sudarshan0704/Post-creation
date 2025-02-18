@@ -70,7 +70,7 @@ export default function Homepage() {
  </h1>
         <p><ScrollVelocity
   texts={['<Create a Multiple Type Of Post with>','Post-Creator']} 
-  velocity={100} 
+  velocity={30} 
   className="custom-scroll-text"
 />
           

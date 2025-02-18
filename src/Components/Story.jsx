@@ -6,6 +6,8 @@ import '../Stylefile/Story.css';
 
 export default function Story() {
   const [story, setStory] = useState('');
+  const [title, setTitle] = useState('');
+  const [moral, setMoral] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [backgroundImage, setBackgroundImage] = useState('');
 
@@ -18,9 +20,13 @@ export default function Story() {
     try {
       const response = await axios.get('https://shortstories-api.onrender.com/');
       setStory(response.data.story);
+      setTitle(response.data.title || 'Untitled Story');
+      setMoral(response.data.moral || 'Every story has a lesson to learn.');
     } catch (error) {
       console.error('Error fetching story:', error);
       setStory('Oops! Failed to fetch a story. Please try again.');
+      setTitle('Error');
+      setMoral('');
     } finally {
       setIsLoading(false);
     }
@@ -103,35 +109,62 @@ export default function Story() {
             <motion.div 
               key={story}
               className="story-display" 
-              style={{backgroundImage: `url(${backgroundImage})`}}
+              style={{
+                backgroundImage: backgroundImage ? `url(${backgroundImage})` : 'none',
+                backgroundColor: backgroundImage ? 'transparent' : '#2c2c2c'
+              }}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.3 }}
             >
-              <p>{story || 'Click "Generate Story" to get a random story!'}</p>
+              <div className="story-content">
+                <h3 className="story-title">{title}</h3>
+                <p className="story-text">{story}</p>
+                <p className="story-moral">Moral: {moral}</p>
+                <p className="story-signature">-@post-Creator</p>
+              </div>
             </motion.div>
           </AnimatePresence>
           <div className="story-actions">
-            <input type="file" accept="image/*" onChange={handleBackgroundChange} className="bg-input" />
-            <motion.button 
-              onClick={downloadStory} 
-              className="action-btn"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              disabled={!story}
-            >
-              Download
-            </motion.button>
-            <motion.button 
-              onClick={shareStory} 
-              className="action-btn"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              disabled={!story}
-            >
-              Share
-            </motion.button>
+            <div className="file-input-wrapper">
+              <input 
+                type="file" 
+                accept="image/*" 
+                onChange={handleBackgroundChange} 
+                className="bg-input" 
+              />
+              {backgroundImage && (
+                <motion.button
+                  onClick={() => setBackgroundImage('')}
+                  className="remove-bg-btn"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Remove Background
+                </motion.button>
+              )}
+            </div>
+            <div className="action-buttons">
+              <motion.button 
+                onClick={downloadStory} 
+                className="action-btn"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                disabled={!story}
+              >
+                Download
+              </motion.button>
+              <motion.button 
+                onClick={shareStory} 
+                className="action-btn"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                disabled={!story}
+              >
+                Share
+              </motion.button>
+            </div>
           </div>
         </motion.section>
       </div>

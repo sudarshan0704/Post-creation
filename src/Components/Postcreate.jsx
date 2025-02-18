@@ -4,7 +4,12 @@ import Footer from './Footer';
 import Memes from './Memes';
 import QuoteGenerator from './Quote';
 import Jokes from './Jokes';
+
+
+// In your renderComponent function:
+
 import Story from './Story';
+
 import { motion, AnimatePresence } from 'framer-motion';
 import '../Stylefile/Postcreate.css';
 
@@ -21,6 +26,7 @@ export default function Postcreate() {
         return <Jokes />;
       case 'story':
         return <Story />;
+    
       default:
         return <Memes />;
     }
@@ -29,43 +35,56 @@ export default function Postcreate() {
   return (
     <div className="postcreate-container">
       <Navigation />
-      <div className="content-wrapper">
+      <div className="content-layout">
         <aside className="sidebar">
           <h2>Content Creator</h2>
-          <nav>
+          <nav className="sidebar-nav">
             <ul>
-              <li>
+              <motion.li
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <button
                   className={activeComponent === 'memes' ? 'active' : ''}
                   onClick={() => setActiveComponent('memes')}
                 >
                   Memes
                 </button>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <button
                   className={activeComponent === 'quotes' ? 'active' : ''}
                   onClick={() => setActiveComponent('quotes')}
                 >
                   Quotes
                 </button>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <button
                   className={activeComponent === 'jokes' ? 'active' : ''}
                   onClick={() => setActiveComponent('jokes')}
                 >
                   Jokes
                 </button>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <button
                   className={activeComponent === 'story' ? 'active' : ''}
                   onClick={() => setActiveComponent('story')}
                 >
                   Story
                 </button>
-              </li>
+              </motion.li>
+            
             </ul>
           </nav>
         </aside>
@@ -73,9 +92,9 @@ export default function Postcreate() {
           <AnimatePresence mode="wait">
             <motion.div
               key={activeComponent}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.3 }}
             >
               {renderComponent()}

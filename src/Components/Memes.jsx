@@ -24,7 +24,7 @@ export default function Memes() {
   const generateMeme = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get('https://api.imgflip.com/get_memes');
+      const response = await axios.get('https://api.imgflip.com/get_memes?limit=1000');
       const memes = response.data.data.memes;
       let randomMeme;
       do {

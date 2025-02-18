@@ -2,7 +2,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  color: #ffffff;
+  color: #eae9e9;
 }
 
 .page-title {
@@ -13,7 +13,6 @@
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-
 .content-wrapper {
   display: flex;
   flex-direction: column;
@@ -45,8 +44,8 @@
   background-color: #2c2c2c;
   border-radius: 12px;
   padding: 25px;
-  margin: 25px 0;
-  
+  margin: auto ;
+  margin-left: auto;
   max-width: 800px;
   min-height: 500px;
  
