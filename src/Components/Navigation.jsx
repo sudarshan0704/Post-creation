@@ -21,7 +21,7 @@ export default function Navigation() {
           <Link to="/" onClick={toggleMenu}>Home</Link>
           <Link to="/about" onClick={toggleMenu}>About Us</Link>
           <Link to="/generate" onClick={toggleMenu}>Post Generate</Link>
-          <Link to="/saved" onClick={toggleMenu}>Saved</Link>
+          <Link to="/Ask" onClick={toggleMenu}>Ask-post</Link>
         </div>
         <div className={`hamburger ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
           <span></span>

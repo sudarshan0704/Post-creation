@@ -97,20 +97,20 @@ export default function Homepage() {
           </div>
         </section>
 
-        <section className="features">
+        <section className="feature">
           <h2>Powerful Features</h2>
           <div className="feature-grid">
-            <div className="feature-card">
+            <div className="feature-cards">
               <i className="fas fa-magic">Ease Create</i>
              
               <p>Create unique content with a click</p>
             </div>
-            <div className="feature-card">
+            <div className="feature-cards">
               <i className="fas fa-palette">Free Download</i>
               
               <p>Download Freely</p>
             </div>
-            <div className="feature-card">
+            <div className="feature-cards">
               <i className="fas fa-chart-line">Share Directly</i>
             
               <p>Get more Follwers Just by Uploading Post</p>
