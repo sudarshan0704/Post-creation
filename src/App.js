@@ -6,6 +6,7 @@ import QuoteGenerator from './Components/Quote';
 import Memes from './Components/Memes';
 import Postcreate from './Components/Postcreate';
 import Askpost from "./Components/ASKpost";
+import About from './Components/About';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
      <BrowserRouter>
       <Routes>
         <Route path="/" element={<Homepage />} />
+        <Route path="/about" element={< About/>} />
         <Route path="/generate" element={<Postcreate />} />
         <Route path="/Ask" element={< Askpost/>} />
         </Routes>     
