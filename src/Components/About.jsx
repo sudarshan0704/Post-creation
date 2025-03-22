@@ -193,12 +193,12 @@ export default function About() {
         </section>
 
         <section className="testimonial-section feature">
-          <h2>What Our Users Say</h2>
+          <h2>What Our team Say</h2>
           <div className="testimonial-container">
             <div className="testimonial">
               <span className="quote">"</span>
               <p className="testimonial-text">
-                They listened to what we needed and wanted for our meme and quotes platform...
+                We listened to what they needed and wanted for Social media content creation  platform...
               </p>
               <p className="testimonial-subtext">
                 The creative tools and easy-to-use interface made it possible to generate content quickly and effectively!
@@ -207,8 +207,8 @@ export default function About() {
               <div className="user-info">
                 <img src={comics} alt="User" />
                 <div>
-                  <p className="user-name">John Doe</p>
-                  <p className="user-role">Founder, Post-Creation</p>
+                  <p className="user-name">Sudarshan </p>
+                  <p className="user-role"> -Post-Creation</p>
                 </div>
               </div>
             </div>

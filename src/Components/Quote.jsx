@@ -137,14 +137,14 @@ const QuoteGenerator = () => {
           <div className="customization-panel">
             <h3>Customize Your Quote</h3>
             <div className="customization-options">
-              <input 
+              Background<input 
                 type="color" 
                 value={backgroundColor} 
                 onChange={(e) => setBackgroundColor(e.target.value)}
                 title="Background Color"
                 
               />
-              <input 
+               text<input 
                 type="color" 
                 value={fontColor} 
                 onChange={(e) => setFontColor(e.target.value)}

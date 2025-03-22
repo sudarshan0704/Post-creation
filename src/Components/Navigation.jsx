@@ -15,13 +15,13 @@ export default function Navigation() {
       <div className="nav-container">
         <Link to="/" className="logo">
           {/* <img src={logo} alt="PostCreator Logo" /> */}
-          <span>PostCreator</span>
+          <span style={{color:"#4aea2e"}}>PostCreator</span>
         </Link>
         <div className={`nav-links ${isOpen ? 'active' : ''}`}>
           <Link to="/" onClick={toggleMenu}>Home</Link>
           <Link to="/about" onClick={toggleMenu}>About Us</Link>
           <Link to="/generate" onClick={toggleMenu}>Post Generate</Link>
-          <Link to="/Ask" onClick={toggleMenu} style={{color:"green",fontWeight:1000, }}>Ask-post <span style={{color:"green"}}>❓</span></Link>
+          <Link to="/Ask" onClick={toggleMenu} style={{color:"#4aea2e",fontWeight:1000, }}>Ask-post <span style={{color:"green"}}>❓</span></Link>
         </div>
         <div className={`hamburger ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
           <span></span>
